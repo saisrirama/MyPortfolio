@@ -1,0 +1,42 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "experience": "Experience",
+        "certifications": "Certifications",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Java Full Stack Engineer",
+        "subtitle": "Building scalable backend systems and intelligent AI-powered solutions.",
+        "cta_projects": "View Projects",
+        "cta_resume": "Download Resume"
+    },
+    "about": {
+        "title": "About Me",
+        "content": "Java Full Stack Developer with 5+ years of experience building scalable applications using Java, Spring Boot, Spring Security, and RESTful APIs within microservices-based architectures. Skilled in developing responsive front-end interfaces with Angular and React, supported by robust backend services and optimized database design using PostgreSQL. Experienced in CI/CD pipelines with Jenkins. Created conversational chatbots using Azure Bot Service and integrated Python Django–based chatbots with TensorFlow and Keras LLM models."
+    },
+    "skills": {
+        "title": "Professional Skills",
+        "backend": "Backend Development",
+        "frontend": "Frontend Development",
+        "cloud_ai": "Cloud & AI",
+        "devops": "DevOps & Tools",
+        "database": "Database Management"
+    },
+    "experience": {
+        "title": "Professional Experience"
+    },
+    "contact": {
+        "title": "Get In Touch",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "location": "Location",
+        "bristol": "Bristol, UK"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "自己紹介",
+        "skills": "スキル",
+        "experience": "経歴",
+        "certifications": "資格",
+        "projects": "プロジェクト",
+        "blog": "ブログ",
+        "contact": "お問い合わせ"
+    },
+    "hero": {
+        "title": "Javaフルスタックエンジニア",
+        "subtitle": "スケーラブルなバックエンドシステムとAIを活用したインテリジェントなソリューションの構築",
+        "cta_projects": "プロジェクトを見る",
+        "cta_resume": "履歴書をダウンロード"
+    },
+    "about": {
+        "title": "自己紹介",
+        "content": "5年以上の実務経験を持つJavaフルスタックデベロッパーです。Java、Spring Boot、Spring Security、RESTful APIを用いたマイクロサービスアーキテクチャの構築に精通しています。AngularやReactを使用したレスポンシブなフロントエンド開発に加え、PostgreSQLによる最適化されたデータベース設計まで幅広く対応可能です。Jenkinsを用いたCI/CDパイプラインの構築や、Azure Bot Serviceを活用したチャットボット開発、さらにはPython DjangoとTensorFlow/Keras LLMモデルを統合した高度なAIソリューションの実装経験も有しております。"
+    },
+    "skills": {
+        "title": "専門スキル",
+        "backend": "バックエンド開発",
+        "frontend": "フロントエンド開発",
+        "cloud_ai": "クラウド & AI",
+        "devops": "DevOps & ツール",
+        "database": "データベース管理"
+    },
+    "experience": {
+        "title": "職務経歴"
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "name": "お名前",
+        "email": "メールアドレス",
+        "message": "メッセージ",
+        "send": "メッセージを送信",
+        "location": "所在地",
+        "bristol": "イギリス、ブリストル"
+    }
+}
