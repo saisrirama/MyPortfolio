@@ -18,13 +18,13 @@ const Layout = ({ children }) => {
                             <p className="text-white/60 text-sm mt-1">{t('hero.title')}</p>
                         </div>
                         <div className="flex space-x-6 text-sm">
-                            <a href="https://github.com/saisrirama" target="_blank" rel="noopener noreferrer" className="hover:text-japanese-red transition-colors">GitHub</a>
-                            <a href="https://www.linkedin.com/in/sai-sri-rama-k/" target="_blank" rel="noopener noreferrer" className="hover:text-japanese-red transition-colors">LinkedIn</a>
-                            <a href="mailto:saisrirama.apk@gmail.com" className="hover:text-japanese-red transition-colors">Email</a>
+                            <a href="https://github.com/saisrirama" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
+                            <a href="https://www.linkedin.com/in/sai-sri-rama-k/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+                            <a href="mailto:saisrirama.apk@gmail.com" className="hover:text-primary transition-colors">Email</a>
                         </div>
                         <p className="text-white/40 text-xs text-center md:text-right">
                             © {new Date().getFullYear()} Sai Sri Rama Khandavilli. <br />
-                            {t('contact.bristol')}
+                            Java Full Stack Engineer
                         </p>
                     </div>
                 </div>

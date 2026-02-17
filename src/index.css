@@ -5,8 +5,9 @@
 @tailwind utilities;
 
 :root {
-  background-color: #ffffff;
+  background-color: #FCF5EE;
   color: #1A1A1A;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -8,28 +8,9 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Recipe Generator",
-            tech: "Java, Spring AI, React, Ollama Gemma",
-            description: "An AI-powered recipe generation platform that integrates the Ollama Gemma model via Spring AI. Features include prompt handling, inference orchestration, and a responsive React UI for personalized recipe suggestions.",
-            github: "https://github.com/saisrirama",
-            link: "#",
-            tags: ["Artificial Intelligence", "Full Stack", "Spring AI"]
-        },
-        {
-            title: "AI Chatbot System",
-            tech: "Python, Django, TensorFlow, Keras",
-            description: "Developed and integrated a custom chatbot using LLMs and Generative AI prompt engineering. Implementation reduced manual query handling by 30-40% for TCS client projects.",
-            github: "https://github.com/saisrirama",
-            link: "#",
-            tags: ["NLP", "Machine Learning", "Automation"]
-        },
-        {
-            title: "Healthcare Conversational Bot",
-            tech: "Azure Bot Service, Azure Functions, QnA Maker",
-            description: "Engineered a healthcare-focused system with encrypted data flows and layered dialogue logic, improving self-service resolution by 25%.",
-            github: "https://github.com/saisrirama",
-            link: "#",
-            tags: ["Azure", "Healthcare", "Bot Framework"]
+            id: 'recipe',
+            github: "https://github.com/saisrirama/recipe-generator",
+            link: "https://saisrirama.github.io/recipe-generator/"
         }
     ];
 
@@ -41,8 +22,8 @@ const Projects = () => {
                 viewport={{ once: true }}
             >
                 <h2 className="text-4xl font-bold text-charcoal mb-16 relative inline-block">
-                    {t('nav.projects')}
-                    <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-japanese-red"></span>
+                    {t('projects.title')}
+                    <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-primary"></span>
                 </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -57,27 +38,27 @@ const Projects = () => {
                         >
                             <div className="flex justify-between items-start mb-6">
                                 <div className="flex space-x-2">
-                                    {project.tags.map((tag, tIdx) => (
-                                        <span key={tIdx} className="text-[10px] font-bold uppercase tracking-widest text-japanese-red bg-soft-pink/40 px-2 py-1">
+                                    {t(`projects.${project.id}.tags`, { returnObjects: true }).map((tag, tIdx) => (
+                                        <span key={tIdx} className="text-[10px] font-bold uppercase tracking-widest text-primary bg-highlight/40 px-2 py-1">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                                 <div className="flex space-x-4">
-                                    <a href={project.github} className="text-body/60 hover:text-japanese-red transition-colors"><Github size={20} /></a>
-                                    <a href={project.link} className="text-body/60 hover:text-japanese-red transition-colors"><ExternalLink size={20} /></a>
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-body/60 hover:text-primary transition-colors"><Github size={20} /></a>
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-body/60 hover:text-primary transition-colors"><ExternalLink size={20} /></a>
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-charcoal mb-3 group-hover:text-japanese-red transition-colors">{project.title}</h3>
-                            <p className="text-sm text-body/60 mb-4 font-medium italic">{project.tech}</p>
+                            <h3 className="text-2xl font-bold text-charcoal mb-3 group-hover:text-primary transition-colors">{t(`projects.${project.id}.title`)}</h3>
+                            <p className="text-sm text-body/60 mb-4 font-medium italic">{t(`projects.${project.id}.tech`)}</p>
                             <p className="text-body leading-relaxed mb-8 grow">
-                                {project.description}
+                                {t(`projects.${project.id}.description`)}
                             </p>
 
                             <div className="pt-6 border-t border-charcoal/5 flex items-center justify-between">
-                                <span className="text-sm font-bold text-charcoal underline decoration-japanese-red decoration-2 underline-offset-4">Case Study</span>
-                                <ArrowRight className="text-japanese-red opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
+                                <span className="text-sm font-bold text-charcoal underline decoration-primary decoration-2 underline-offset-4">{t(`projects.${project.id}.case_study`)}</span>
+                                <ArrowRight className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
                             </div>
                         </motion.div>
                     ))}

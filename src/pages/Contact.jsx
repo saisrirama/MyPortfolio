@@ -1,107 +1,68 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, MapPin, Send } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
     const { t } = useTranslation();
-    const [status, setStatus] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // In a real implementation, integrate EmailJS here
-        setStatus('Thank you! Your message has been sent (Demo).');
-    };
+    const socialLinks = [
+        {
+            icon: <Mail size={24} />,
+            label: "Email",
+            href: "mailto:saisrirama.apk@gmail.com",
+            color: "hover:text-primary hover:border-primary"
+        },
+        {
+            icon: <Linkedin size={24} />,
+            label: "LinkedIn",
+            href: "https://linkedin.com/in/sai-sri-rama-k/",
+            color: "hover:text-primary hover:border-primary"
+        },
+        {
+            icon: <Github size={24} />,
+            label: "GitHub",
+            href: "https://github.com/saisrirama",
+            color: "hover:text-primary hover:border-primary"
+        },
+    ];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
+                className="text-center"
             >
-                <h2 className="text-4xl font-bold text-charcoal mb-16 relative inline-block">
+                <h2 className="text-4xl font-bold text-charcoal mb-4 relative inline-block">
                     {t('contact.title')}
-                    <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-japanese-red"></span>
+                    <span className="absolute bottom-0 left-1/4 w-1/2 h-1 bg-primary"></span>
                 </h2>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    <div className="space-y-12">
-                        <div>
-                            <h3 className="text-xl font-bold text-charcoal mb-6">Contact Information</h3>
-                            <div className="space-y-6">
-                                <a href="mailto:saisrirama.apk@gmail.com" className="flex items-center space-x-4 group text-body hover:text-japanese-red transition-colors">
-                                    <div className="w-12 h-12 bg-white border border-charcoal/10 flex items-center justify-center rounded-sm group-hover:bg-soft-pink/20 group-hover:border-japanese-red/20 transition-all">
-                                        <Mail size={20} />
-                                    </div>
-                                    <span className="font-medium">saisrirama.apk@gmail.com</span>
-                                </a>
-                                <a href="https://linkedin.com/in/sai-sri-rama-k/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group text-body hover:text-japanese-red transition-colors">
-                                    <div className="w-12 h-12 bg-white border border-charcoal/10 flex items-center justify-center rounded-sm group-hover:bg-soft-pink/20 group-hover:border-japanese-red/20 transition-all">
-                                        <Linkedin size={20} />
-                                    </div>
-                                    <span className="font-medium">linkedin.com/in/sai-sri-rama-k/</span>
-                                </a>
-                                <a href="https://github.com/saisrirama" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group text-body hover:text-japanese-red transition-colors">
-                                    <div className="w-12 h-12 bg-white border border-charcoal/10 flex items-center justify-center rounded-sm group-hover:bg-soft-pink/20 group-hover:border-japanese-red/20 transition-all">
-                                        <Github size={20} />
-                                    </div>
-                                    <span className="font-medium">github.com/saisrirama</span>
-                                </a>
-                                <div className="flex items-center space-x-4 text-body">
-                                    <div className="w-12 h-12 bg-white border border-charcoal/10 flex items-center justify-center rounded-sm">
-                                        <MapPin size={20} />
-                                    </div>
-                                    <span className="font-medium">Bristol, United Kingdom</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-8 bg-japanese-red text-white shadow-xl">
-                            <h4 className="font-bold text-lg mb-2">Availability</h4>
-                            <p className="text-white/80 text-sm leading-relaxed">
-                                Currently open to new opportunities and collaborations in Java Backend, Cloud ML, and AI solutions.
-                            </p>
-                        </div>
+                <div className="max-w-3xl mx-auto mt-16 flex flex-col items-center">
+                    <div className="grid grid-cols-3 gap-8 md:gap-16 mb-20">
+                        {socialLinks.map((link, idx) => (
+                            <motion.a
+                                key={idx}
+                                href={link.href}
+                                target={link.href.startsWith('mailto') ? '_self' : '_blank'}
+                                rel="noopener noreferrer"
+                                whileHover={{ y: -5 }}
+                                className={`w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border border-charcoal/10 rounded-none bg-white text-body transition-all duration-300 shadow-sm hover:shadow-xl ${link.color}`}
+                            >
+                                {link.icon}
+                            </motion.a>
+                        ))}
                     </div>
 
-                    <div>
-                        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 border border-charcoal/5 shadow-sm">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-charcoal/40 mb-2">{t('contact.name')}</label>
-                                    <input
-                                        required
-                                        type="text"
-                                        className="w-full border-b border-charcoal/10 py-3 focus:outline-none focus:border-japanese-red transition-colors"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-charcoal/40 mb-2">{t('contact.email')}</label>
-                                    <input
-                                        required
-                                        type="email"
-                                        className="w-full border-b border-charcoal/10 py-3 focus:outline-none focus:border-japanese-red transition-colors"
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-xs font-bold uppercase tracking-widest text-charcoal/40 mb-2">{t('contact.message')}</label>
-                                <textarea
-                                    required
-                                    rows="5"
-                                    className="w-full border-b border-charcoal/10 py-3 focus:outline-none focus:border-japanese-red transition-colors resize-none"
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-full py-4 bg-charcoal text-white font-bold flex items-center justify-center space-x-3 hover:bg-japanese-red transition-colors group"
-                            >
-                                <span>{t('contact.send')}</span>
-                                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </button>
-                            {status && <p className="text-sm text-green-600 font-medium text-center">{status}</p>}
-                        </form>
+                    <div className="p-10 bg-primary text-white shadow-2xl w-full max-w-2xl transform -rotate-1">
+                        <h4 className="font-bold text-xl mb-4 tracking-tight">
+                            {t('contact.availability_title')}
+                        </h4>
+                        <p className="text-white/90 text-md leading-relaxed">
+                            {t('contact.availability_text')}
+                        </p>
                     </div>
                 </div>
             </motion.div>

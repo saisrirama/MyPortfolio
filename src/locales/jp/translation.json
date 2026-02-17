@@ -6,37 +6,99 @@
         "experience": "経歴",
         "certifications": "資格",
         "projects": "プロジェクト",
-        "blog": "ブログ",
-        "contact": "お問い合わせ"
+        "contact": "連絡先"
     },
     "hero": {
+        "hi": "はじめまして、",
         "title": "Javaフルスタックエンジニア",
-        "subtitle": "スケーラブルなバックエンドシステムとAIを活用したインテリジェントなソリューションの構築",
+        "subtitle": "スケーラブルなバックエンドシステムとAIを活用したインテリジェントなソリューションを構築します。",
         "cta_projects": "プロジェクトを見る",
         "cta_resume": "履歴書をダウンロード"
     },
     "about": {
         "title": "自己紹介",
-        "content": "5年以上の実務経験を持つJavaフルスタックデベロッパーです。Java、Spring Boot、Spring Security、RESTful APIを用いたマイクロサービスアーキテクチャの構築に精通しています。AngularやReactを使用したレスポンシブなフロントエンド開発に加え、PostgreSQLによる最適化されたデータベース設計まで幅広く対応可能です。Jenkinsを用いたCI/CDパイプラインの構築や、Azure Bot Serviceを活用したチャットボット開発、さらにはPython DjangoとTensorFlow/Keras LLMモデルを統合した高度なAIソリューションの実装経験も有しております。"
+        "content": "Javaフルスタックデベロッパーとして5年以上の実務経験を有し、Java、Spring Boot、Spring Security、RESTful APIを用いたマイクロサービスアーキテクチャの構築に精通しております。AngularやReactを使用したレスポンシブなフロントエンド開発に加え、PostgreSQLによる最適化されたデータベース設計まで幅広く対応可能です。Jenkinsを用いたCI/CDパイプラインの構築や、Azure Bot Serviceを活用したチャットボット開発、さらにはPython DjangoとTensorFlow/Keras LLMモデルを統合した高度なAIソリューションの実装経験も有しております。",
+        "exp_years": "経験年数",
+        "features": "提供機能数",
+        "highlights_title": "キャリアハイライト",
+        "highlight_1": "Spring Boot マイクロサービスのエキスパート",
+        "highlight_2": "PostgreSQLによる最適化されたDB設計",
+        "highlight_3": "AIチャットボット統合の実績",
+        "highlight_4": "Jenkinsを活用したCI/CDの構築",
+        "highlight_5": "ユニットテストのカバレッジ向上（100%）",
+        "highlight_6": "JLPT N3 保有エンジニア"
     },
     "skills": {
         "title": "専門スキル",
         "backend": "バックエンド開発",
         "frontend": "フロントエンド開発",
-        "cloud_ai": "クラウド & AI",
-        "devops": "DevOps & ツール",
+        "cloud_ai": "クラウド ＆ AI",
+        "devops": "DevOps ＆ ツール",
         "database": "データベース管理"
     },
     "experience": {
-        "title": "職務経歴"
+        "title": "職務経歴",
+        "tcs": {
+            "company": "タタ・コンサルタンシー・サービシズ (TCS)",
+            "role": "Javaフルスタックデベロッパー",
+            "period": "2020年10月 – 2025年11月",
+            "h1": "アジャイル環境において、各リリーサイクルで20件以上の不具合を解消しました。",
+            "h2": "Java、Spring Boot、Angularを使用して20件以上のアプリケーション機能を開発しました。",
+            "h3": "Python DjangoとLLMを用いたAIチャットボットを構築し、手作業による問い合わせ対応を30〜40％削減しました。",
+            "h4": "PostgreSQLとHibernateを使用したリレーショナルデータベースのスキーマ設計を行いました。",
+            "h5": "GitLab CI/CDパイプラインの統合により、手作業によるリリース工数を30〜40％削減しました。",
+            "h6": "コードカバレッジ100％のユニットテストスイートを作成しました。"
+        },
+        "spikewell": {
+            "company": "Spikewell Ltd.",
+            "role": "ビジネスインテリジェンス・インターン",
+            "period": "2019年9月 – 2019年11月",
+            "h1": "Azure Bot Serviceを使用したヘルスケア向け対話システムを構築しました。",
+            "h2": "暗号化されたデータフローの構築により、患者の待ち時間を35％短縮しました。",
+            "h3": "Power BIダッシュボードを作成し、レポート作成の効率を50％向上させました。"
+        },
+        "ctrtc": {
+            "company": "Central Tool Room & Training Centre",
+            "role": "AI/MLインターン",
+            "period": "2019年6月",
+            "h1": "TensorFlow/Kerasを用いた行動クローニングフレームワークを構築しました。",
+            "h2": "車線追跡シミュレーションにおいて、90〜95％の模倣精度を達成しました。"
+        }
+    },
+    "projects": {
+        "title": "注目のプロジェクト",
+        "recipe": {
+            "title": "レシピ・ジェネレーター",
+            "tech": "Java, Spring AI, React, Ollama Gemma",
+            "description": "Spring AIを介してOllama Gemmaモデルを統合した、AI駆動型のレシピ生成プラットフォームです。プロンプト管理、推論のオーケストレーション、パーソナライズされたレシピ提案のためのレスポンシブなReact UIを特徴としています。",
+            "tags": [
+                "人工知能",
+                "フルスタック",
+                "Spring AI"
+            ],
+            "case_study": "ケーススタディ"
+        }
     },
     "contact": {
-        "title": "お問い合わせ",
-        "name": "お名前",
-        "email": "メールアドレス",
-        "message": "メッセージ",
-        "send": "メッセージを送信",
-        "location": "所在地",
-        "bristol": "イギリス、ブリストル"
+        "title": "ご連絡先",
+        "availability_title": "現在の状況",
+        "availability_text": "現在、Javaバックエンド、クラウドML、AIソリューションにおける新しい機会やコラボレーションを募集しております。"
+    },
+    "certs": {
+        "google": {
+            "title": "Professional Machine Learning Engineer Certification",
+            "issuer": "Google",
+            "date": "発行日: 2025年4月 · 有効期限: 2027年4月"
+        },
+        "jlpt": {
+            "title": "日本語能力試験 (JLPT) N3",
+            "issuer": "日本語能力試験",
+            "date": "2024年1月"
+        },
+        "cisco": {
+            "title": "Winner – Cisco Interstate Hackathon",
+            "issuer": "Cisco",
+            "date": "2019年"
+        }
     }
 }

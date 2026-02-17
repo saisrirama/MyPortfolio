@@ -6,10 +6,10 @@
         "experience": "Experience",
         "certifications": "Certifications",
         "projects": "Projects",
-        "blog": "Blog",
         "contact": "Contact"
     },
     "hero": {
+        "hi": "Hello, I am",
         "title": "Java Full Stack Engineer",
         "subtitle": "Building scalable backend systems and intelligent AI-powered solutions.",
         "cta_projects": "View Projects",
@@ -17,7 +17,16 @@
     },
     "about": {
         "title": "About Me",
-        "content": "Java Full Stack Developer with 5+ years of experience building scalable applications using Java, Spring Boot, Spring Security, and RESTful APIs within microservices-based architectures. Skilled in developing responsive front-end interfaces with Angular and React, supported by robust backend services and optimized database design using PostgreSQL. Experienced in CI/CD pipelines with Jenkins. Created conversational chatbots using Azure Bot Service and integrated Python Django–based chatbots with TensorFlow and Keras LLM models."
+        "content": "Java Full Stack Developer with 5+ years of experience building scalable applications using Java, Spring Boot, Spring Security, and RESTful APIs within microservices-based architectures. Skilled in developing responsive front-end interfaces with Angular and React, supported by robust backend services and optimized database design using PostgreSQL. Experienced in CI/CD pipelines with Jenkins. Created conversational chatbots using Azure Bot Service and integrated Python Django–based chatbots with TensorFlow and Keras LLM models.",
+        "exp_years": "Years Experience",
+        "features": "Features Delivered",
+        "highlights_title": "Career Highlights",
+        "highlight_1": "Spring Boot Microservices Expert",
+        "highlight_2": "PostgreSQL & Optimized DB Design",
+        "highlight_3": "AI-Powered Chatbot Integration",
+        "highlight_4": "CI/CD Mastery with Jenkins",
+        "highlight_5": "Unit Test Coverage Enthusiast (100%)",
+        "highlight_6": "JLPT N3 Certified Engineer"
     },
     "skills": {
         "title": "Professional Skills",
@@ -28,15 +37,68 @@
         "database": "Database Management"
     },
     "experience": {
-        "title": "Professional Experience"
+        "title": "Work Experience",
+        "tcs": {
+            "company": "Tata Consultancy Services (TCS)",
+            "role": "Java Full Stack Developer",
+            "period": "Oct 2020 – Nov 2025",
+            "h1": "Resolved 20+ defects per release cycle in an Agile environment.",
+            "h2": "Developed 20+ applications features using Java, Spring Boot, and Angular.",
+            "h3": "Built an AI-powered chatbot using Python Django and LLMs, reducing manual query handling by 30-40%.",
+            "h4": "Designed Relational database schemas in PostgreSQL with Hibernate.",
+            "h5": "Reduced manual release effort by 30-40% using integrated GitLab CI/CD pipelines.",
+            "h6": "Authored unit test suites with 100% code coverage."
+        },
+        "spikewell": {
+            "company": "Spikewell Ltd.",
+            "role": "Business Intelligence Intern",
+            "period": "Sep 2019 – Nov 2019",
+            "h1": "Engineered healthcare conversational system with Azure Bot Service.",
+            "h2": "Reduced patient wait times by 35% through encrypted data flows.",
+            "h3": "Produced Power BI dashboards increasing reporting efficiency by 50%."
+        },
+        "ctrtc": {
+            "company": "Central Tool Room & Training Centre",
+            "role": "AI/ML Intern",
+            "period": "Jun 2019",
+            "h1": "Constructed behavioral-cloning framework with TensorFlow/Keras.",
+            "h2": "Achieved 90–95% imitation accuracy in lane-tracking simulations."
+        }
+    },
+    "projects": {
+        "title": "Featured Projects",
+        "recipe": {
+            "title": "Recipe Generator",
+            "tech": "Java, Spring AI, React, Ollama Gemma",
+            "description": "An AI-powered recipe generation platform that integrates the Ollama Gemma model via Spring AI. Features include prompt handling, inference orchestration, and a responsive React UI for personalized recipe suggestions.",
+            "tags": [
+                "Artificial Intelligence",
+                "Full Stack",
+                "Spring AI"
+            ],
+            "case_study": "Case Study"
+        }
     },
     "contact": {
         "title": "Get In Touch",
-        "name": "Name",
-        "email": "Email",
-        "message": "Message",
-        "send": "Send Message",
-        "location": "Location",
-        "bristol": "Bristol, UK"
+        "availability_title": "Availability",
+        "availability_text": "Currently open to new opportunities and collaborations in Java Backend, Cloud ML, and AI solutions."
+    },
+    "certs": {
+        "google": {
+            "title": "Professional Machine Learning Engineer Certification",
+            "issuer": "Google",
+            "date": "Issued Apr 2025 · Expires Apr 2027"
+        },
+        "jlpt": {
+            "title": "JLPT N3",
+            "issuer": "Japanese Language Proficiency Test",
+            "date": "Jan 2024"
+        },
+        "cisco": {
+            "title": "Winner – Cisco Interstate Hackathon",
+            "issuer": "Cisco",
+            "date": "2019"
+        }
     }
 }

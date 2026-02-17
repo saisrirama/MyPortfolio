@@ -7,9 +7,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                'japanese-red': '#8B0000',
-                'soft-pink': '#FFF5F5',
-                'soft-green': '#F0FFF4',
+                'primary': '#850E35',
+                'secondary': '#EE6983',
+                'highlight': '#FFC4C4',
+                'site-bg': '#FCF5EE',
                 'charcoal': '#1A1A1A',
                 'body': '#4B5563',
             },
