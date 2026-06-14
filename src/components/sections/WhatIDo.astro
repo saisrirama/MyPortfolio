@@ -1,0 +1,56 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const services = [
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`,
+    title: 'Full Stack Development',
+    description: 'Building modern web applications using React, TypeScript, Python, FastAPI, PostgreSQL, and cloud-native technologies.',
+    color: 'from-violet-500 to-purple-600',
+    bgGlow: 'bg-violet-500/10',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`,
+    title: 'AI Engineering',
+    description: 'Designing intelligent systems powered by LLMs, LangGraph workflows, structured outputs, RAG pipelines, and agent orchestration frameworks.',
+    color: 'from-cyan-500 to-blue-600',
+    bgGlow: 'bg-cyan-500/10',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>`,
+    title: 'Cloud & DevOps',
+    description: 'Deploying scalable infrastructure, implementing CI/CD pipelines, containerized applications, and cloud-native architectures.',
+    color: 'from-emerald-500 to-teal-600',
+    bgGlow: 'bg-emerald-500/10',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+    title: 'Product Development',
+    description: 'Working directly with founders and stakeholders to transform ideas into production-ready products.',
+    color: 'from-amber-500 to-orange-600',
+    bgGlow: 'bg-amber-500/10',
+  },
+];
+---
+
+<div class="section-container">
+  <SectionHeading title="What I Do" subtitle="Core areas of expertise" />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+    {services.map((service, i) => (
+      <div class={`card p-8 group reveal delay-${(i + 1) * 100}`}>
+        <div class={`w-14 h-14 rounded-2xl ${service.bgGlow} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+          <div class={`bg-gradient-to-br ${service.color} bg-clip-text`}>
+            <Fragment set:html={service.icon} />
+          </div>
+        </div>
+        <h3 class="text-xl font-bold mb-3" style="color: rgb(var(--color-text));">
+          {service.title}
+        </h3>
+        <p class="text-sm leading-relaxed" style="color: rgb(var(--color-text-muted));">
+          {service.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>

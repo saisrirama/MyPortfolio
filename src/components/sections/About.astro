@@ -1,0 +1,66 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import ResumeButton from '../ui/ResumeButton.astro';
+
+const stats = [
+  { value: '5+', label: 'Years Experience' },
+  { value: '4', label: 'Companies' },
+  { value: 'AI', label: 'Products Built' },
+  { value: '∞', label: 'Learning' },
+];
+---
+
+<section id="about" class="relative">
+  <div class="absolute top-0 left-0 w-72 h-72 bg-violet-500/5 rounded-full blur-3xl"></div>
+
+  <div class="section-container relative z-10">
+    <SectionHeading title="About Me" />
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start max-w-5xl mx-auto">
+
+      <!-- Text column -->
+      <div class="lg:col-span-3 space-y-6 reveal">
+        <p class="text-base md:text-lg leading-relaxed" style="color: rgb(var(--color-text-muted));">
+          I'm a Full Stack & AI Engineer with over five years of experience delivering scalable applications across startups and enterprise environments.
+        </p>
+        <p class="text-base md:text-lg leading-relaxed" style="color: rgb(var(--color-text-muted));">
+          My background spans backend engineering, frontend development, cloud infrastructure, and AI systems. I've built products used by thousands of users, designed microservices architectures, optimized large-scale databases, and developed AI-powered solutions that automate complex workflows.
+        </p>
+        <p class="text-base md:text-lg leading-relaxed" style="color: rgb(var(--color-text-muted));">
+          Recently, my focus has shifted toward <span class="text-violet-400 font-medium">Agentic AI</span>, <span class="text-violet-400 font-medium">Large Language Models (LLMs)</span>, <span class="text-cyan-400 font-medium">Retrieval-Augmented Generation (RAG)</span>, and <span class="text-cyan-400 font-medium">intelligent automation systems</span>. I enjoy taking products from concept to production, collaborating closely with founders, stakeholders, and cross-functional teams to deliver practical solutions to real business problems.
+        </p>
+        <p class="text-base md:text-lg leading-relaxed" style="color: rgb(var(--color-text-muted));">
+          Outside of coding, I'm passionate about emerging AI technologies, product thinking, software architecture, and continuous learning.
+        </p>
+
+        <div class="pt-4">
+          <ResumeButton size="md" />
+        </div>
+      </div>
+
+      <!-- Stats column -->
+      <div class="lg:col-span-2">
+        <div class="grid grid-cols-2 gap-4 reveal" style="animation-delay: 200ms;">
+          {stats.map((stat) => (
+            <div class="card p-6 text-center">
+              <div class="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+              <div class="text-xs font-medium uppercase tracking-wider" style="color: rgb(var(--color-text-muted));">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Location badge -->
+        <div class="mt-4 card p-4 flex items-center gap-3 reveal" style="animation-delay: 300ms;">
+          <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-semibold" style="color: rgb(var(--color-text));">Bristol, United Kingdom</div>
+            <div class="text-xs" style="color: rgb(var(--color-text-muted));">Open to remote & hybrid</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

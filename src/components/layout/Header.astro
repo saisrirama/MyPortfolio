@@ -1,0 +1,213 @@
+---
+import { navItems } from '../../data/navigation';
+import ThemeToggle from './ThemeToggle.astro';
+import ResumeButton from '../ui/ResumeButton.astro';
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  style="background-color: rgb(var(--color-bg)); border-bottom: 1px solid rgb(var(--color-border));"
+  role="banner"
+>
+  <div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between" style="height: var(--header-height);">
+
+        <!-- Logo -->
+        <a
+          href="#home"
+          class="flex items-center gap-3 group"
+          aria-label="Sai Sri Rama Khandavilli"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm tracking-wide shadow-lg group-hover:shadow-violet-500/30 transition-shadow duration-300"
+          >
+            SK
+          </div>
+          <span class="hidden sm:block text-lg font-semibold" style="color: rgb(var(--color-text));">
+            Sai Sri Rama <span class="gradient-text">Khandavilli</span>
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="nav-link px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-violet-500/10"
+              style="color: rgb(var(--color-text-muted));"
+              data-section={item.href.replace('#', '')}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+          <ThemeToggle />
+          <div class="hidden md:block">
+            <ResumeButton size="sm" />
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger-btn"
+            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-violet-500/10 transition-colors"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg id="hamburger-icon" class="w-5 h-5" style="color: rgb(var(--color-text));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="w-5 h-5 hidden" style="color: rgb(var(--color-text));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+
+<!-- Mobile Slide-in Drawer -->
+<nav
+  id="mobile-menu"
+  class="mobile-menu fixed top-0 right-0 bottom-0 w-72 z-50 glass-heavy lg:hidden flex flex-col"
+  aria-label="Mobile navigation"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="flex items-center justify-between p-5 border-b" style="border-color: rgb(var(--color-border));">
+    <span class="text-lg font-semibold gradient-text">Menu</span>
+    <button
+      id="mobile-close-btn"
+      class="w-10 h-10 rounded-lg hover:bg-violet-500/10 flex items-center justify-center transition-colors"
+      aria-label="Close navigation menu"
+    >
+      <svg class="w-5 h-5" style="color: rgb(var(--color-text));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex flex-col py-4 flex-1 overflow-y-auto">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="mobile-nav-link px-6 py-3 text-base font-medium transition-all duration-200 hover:bg-violet-500/10 hover:pl-8"
+        style="color: rgb(var(--color-text-muted));"
+        data-section={item.href.replace('#', '')}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+
+  <div class="p-5 border-t" style="border-color: rgb(var(--color-border));">
+    <ResumeButton size="full" />
+  </div>
+</nav>
+
+<!-- Header spacer -->
+<div style="height: var(--header-height);"></div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('site-header');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const mobileCloseBtn = document.getElementById('mobile-close-btn');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    // -- Shadow on scroll --
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 10) {
+        header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+      lastScroll = scrollY;
+    }, { passive: true });
+
+    // -- Mobile menu --
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      mobileOverlay.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        mobileOverlay.style.opacity = '1';
+      });
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileOverlay.style.opacity = '0';
+      setTimeout(() => mobileOverlay.classList.add('hidden'), 300);
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu on nav click
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+
+    // -- Scroll Spy --
+    const sections = document.querySelectorAll('section[id]');
+    const allLinks = [...navLinks, ...mobileNavLinks];
+
+    function updateActiveSection() {
+      const scrollY = window.scrollY + 100;
+      let currentSection = '';
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      allLinks.forEach((link) => {
+        const sectionId = link.getAttribute('data-section');
+        if (sectionId === currentSection) {
+          link.style.color = 'rgb(139 92 246)';
+          link.style.backgroundColor = 'rgb(139 92 246 / 0.1)';
+        } else {
+          link.style.color = 'rgb(var(--color-text-muted))';
+          link.style.backgroundColor = 'transparent';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    updateActiveSection();
+  });
+</script>

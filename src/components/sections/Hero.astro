@@ -1,0 +1,77 @@
+---
+import Badge from '../ui/Badge.astro';
+import ResumeButton from '../ui/ResumeButton.astro';
+
+const techBadges = [
+  'Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL',
+  'Agentic AI', 'LangGraph', 'AWS', 'GCP', 'Docker',
+];
+---
+
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 hero-grid"></div>
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+  <div class="section-container relative z-10 w-full">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <!-- Eyebrow -->
+      <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8" style="border-color: rgb(var(--color-border)); background-color: rgb(var(--color-surface));">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-sm font-medium" style="color: rgb(var(--color-text-muted));">Available for opportunities</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="animate-fade-in-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" style="animation-delay: 100ms;">
+        Building <span class="gradient-text">Intelligent Software</span><br class="hidden sm:block" /> That Scales
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="animate-fade-in-up text-lg md:text-xl leading-relaxed mb-4 max-w-2xl mx-auto" style="color: rgb(var(--color-text-muted)); animation-delay: 200ms;">
+        Senior Full Stack & AI Engineer with 5+ years of experience building production-grade web applications, AI-powered products, and cloud-native systems.
+      </p>
+
+      <!-- Supporting text -->
+      <p class="animate-fade-in-up text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto" style="color: rgb(var(--color-text-muted)); animation-delay: 300ms;">
+        I help companies turn ambitious ideas into reliable software. From scalable APIs and modern React applications to AI agents and LLM-powered workflows, I build products that deliver measurable business impact.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="animate-fade-in-up flex flex-wrap items-center justify-center gap-4 mb-12" style="animation-delay: 400ms;">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-semibold shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          View My Work
+        </a>
+        <ResumeButton size="lg" variant="outline" />
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-semibold border transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/5"
+          style="border-color: rgb(var(--color-border)); color: rgb(var(--color-text));"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Tech Badges -->
+      <div class="animate-fade-in-up flex flex-wrap justify-center gap-2" style="animation-delay: 500ms;">
+        {techBadges.map((tech) => (
+          <Badge label={tech} />
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6" style="color: rgb(var(--color-text-muted));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+</section>

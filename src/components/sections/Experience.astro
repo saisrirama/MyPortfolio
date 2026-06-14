@@ -1,0 +1,88 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import { experiences } from '../../data/experience';
+---
+
+<section id="experience" class="relative">
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"></div>
+
+  <div class="section-container relative z-10">
+    <SectionHeading
+      title="Experience"
+      subtitle="Over the past five years, I've worked across startups and enterprise environments, delivering solutions that combine strong engineering fundamentals with emerging AI capabilities."
+    />
+
+    <!-- Intro -->
+    <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+      <p class="text-base leading-relaxed" style="color: rgb(var(--color-text-muted));">
+        My experience spans organizations including <span class="text-violet-400 font-medium">Whipcream</span>, <span class="text-violet-400 font-medium">Tata Consultancy Services (TCS)</span>, <span class="text-cyan-400 font-medium">Spikewell Ltd.</span>, and <span class="text-cyan-400 font-medium">CTTC</span>, where I've contributed to AI products, enterprise platforms, cloud-native systems, and customer-facing applications.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-line max-w-5xl mx-auto relative space-y-12 md:space-y-16 pl-8 md:pl-12">
+      {experiences.map((exp, i) => (
+        <div class="reveal relative">
+
+          {/* Connecting Line */}
+          {i !== experiences.length - 1 && (
+            <div class="absolute left-[-33px] md:left-[-49px] top-[14px] w-[2px] h-[calc(100%+3rem)] md:h-[calc(100%+4rem)] bg-gradient-to-b from-violet-500/20 to-cyan-500/20 z-0"></div>
+          )}
+
+          {/* Dot */}
+          <div class="absolute left-[-2.5rem] md:left-[-3.5rem] top-1.5 w-4 h-4 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 border-4 z-10" style="border-color: rgb(var(--color-bg)); box-shadow: 0 0 0 4px rgb(var(--color-bg));"></div>
+
+          {/* Content card */}
+          <div class="card p-6 md:p-8">
+            {/* Header */}
+            <div class="flex items-start justify-between gap-4 mb-4 flex-wrap">
+              <div>
+                <h3 class="text-lg md:text-xl font-bold" style="color: rgb(var(--color-text));">
+                  {exp.role}
+                </h3>
+                <p class="text-sm font-medium text-violet-400">{exp.company}</p>
+                <p class="text-xs mt-1" style="color: rgb(var(--color-text-muted));">
+                  {exp.type}
+                </p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                {exp.isCurrent && (
+                  <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Current
+                  </span>
+                )}
+                <span class="text-xs font-medium px-3 py-1 rounded-full" style="background-color: rgb(var(--color-bg-secondary)); color: rgb(var(--color-text-muted));">
+                  {exp.period}
+                </span>
+              </div>
+            </div>
+
+            {/* Description */}
+            <p class="text-sm mb-4 leading-relaxed" style="color: rgb(var(--color-text-muted));">
+              {exp.description}
+            </p>
+
+            {/* Contributions */}
+            <ul class="space-y-2 mb-5">
+              {exp.contributions.map((c) => (
+                <li class="flex items-start gap-2 text-sm" style="color: rgb(var(--color-text-muted));">
+                  <svg class="w-4 h-4 text-violet-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>
+                  {c}
+                </li>
+              ))}
+            </ul>
+
+            {/* Tech chips */}
+            <div class="flex flex-wrap gap-1.5">
+              {exp.technologies.map((tech) => (
+                <span class="text-xs px-2.5 py-1 rounded-md font-medium" style="background-color: rgb(var(--color-bg-secondary)); color: rgb(var(--color-text-muted));">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
