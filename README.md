@@ -30,22 +30,22 @@ I help companies turn ambitious ideas into reliable software — from scalable A
 
 ## 🏢 Experience
 
-### Senior Full Stack & AI Engineer — Whipcream *(2023 – Present)*
+### Senior Full Stack & AI Engineer — Whipcream *(April 2025 – Present)*
 - Built AI-powered applications leveraging LLMs and agent-based workflows
 - Developed React frontends and FastAPI backend services for production
 - Implemented LangGraph-powered agent orchestration workflows
 - Created structured AI outputs using Pydantic models
 
-### Full Stack Developer — Tata Consultancy Services *(2020 – 2023)*
+### Full Stack Developer — Tata Consultancy Services *(October 2020 – November 2025)*
 - Delivered enterprise-grade applications serving large user bases
 - Built AI-powered chatbot solutions supporting 10,000+ users
 - Designed RESTful and GraphQL APIs for enterprise integrations
 - Developed CI/CD pipelines and automated deployment workflows
 
-### Software Engineering Intern — Spikewell Ltd. *(2019 – 2020)*
+### Software Engineering Intern — Spikewell Ltd. *(September 2019 – November 2019)*
 - Developed chatbot using Node.js, Azure LUIS, and Microsoft Bot Framework
 
-### AI Engineering Intern — CTTC *(2018 – 2019)*
+### AI Engineering Intern — CTTC *(June 2019)*
 - Developed self-driving car prototype using CNNs and computer vision
 
 ---
